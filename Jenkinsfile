@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Assemble microcode') {
       steps {
-        sh 'curl -L "$CASM_URL" -o casm-static'
+        sh 'curl -L "$CASM_URL" -o casm-static && chmod +x casm-static'
         sh 'mkdir build'
         sh 'cd build && $WORKSPACE/casm-static --input $WORKSPACE/ucode.txt --output ucode.rom --ucode'
         sh 'cd build && $WORKSPACE/casm-static --input $WORKSPACE/ucode.txt --output ucode.bin --ucode --binary'
