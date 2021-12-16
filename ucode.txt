@@ -10,7 +10,7 @@ end
 ;;MOV
 awi
 la
-alu 0
+alul 0xf
 end
 :0x3
 ;;EJMP
@@ -22,7 +22,7 @@ end
 la
 awi
 la
-alu 0
+alul 0xf
 end
 :0x5
 :0x6
