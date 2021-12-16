@@ -4,7 +4,7 @@ pipeline {
     label '!windows-1' 
   }
   environment {
-    CASM_URL = 'https://jenkins.i-am.cool/job/muon-casm/job/master/44/artifact/casm-static-d9a7235-git' 
+    CASM_URL = 'https://jenkins.i-am.cool/job/muon-casm/job/master/lastSuccessfulBuild/artifact/casm-staticlatest' 
   }
   stages {
     stage('Assemble microcode') {
