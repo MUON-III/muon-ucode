@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build CASM') {
       steps {
-        sh 'git clone --branch $CASM_VERSION https://github.com/MUON-III/muon-casm.git'
+        sh 'git clone --depth 1 --branch $CASM_VERSION https://github.com/MUON-III/muon-casm.git'
         sh 'cd muon-casm && mkdir build'
         sh 'cd muon-casm/build && cmake ..'
         sh 'cd muon-casm/build && make'
