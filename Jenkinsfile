@@ -13,7 +13,7 @@ pipeline {
         dir("build"){
           sh '$WORKSPACE/casm-static --input $WORKSPACE/ucode.txt --output ucode.rom --ucode'
           sh '$WORKSPACE/casm-static --input $WORKSPACE/ucode.txt --output ucode.bin --ucode --binary'
-          archiveArtifacts artifacts: 'build/ucode*', fingerprint: true
+          archiveArtifacts artifacts: 'ucode*', fingerprint: true
           deleteDir()
         }
       }
