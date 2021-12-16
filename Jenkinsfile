@@ -5,7 +5,7 @@ pipeline {
     stage('Build CASM') {
       steps {
         sh 'git clone https://github.com/MUON-III/muon-casm.git'
-        sh 'cd muon-casm && git checkout v1.1'
+        sh 'cd muon-casm && git checkout v1.1.1'
         sh 'cd muon-casm && mkdir build'
         sh 'cd muon-casm/build && cmake ..'
         sh 'cd muon-casm/build && make'
