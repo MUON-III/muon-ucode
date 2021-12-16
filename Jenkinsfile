@@ -13,6 +13,7 @@ pipeline {
         dir("build"){
           sh '$WORKSPACE/casm-static --input $WORKSPACE/ucode.txt --output ucode.rom --ucode'
           sh '$WORKSPACE/casm-static --input $WORKSPACE/ucode.txt --output ucode.bin --ucode --binary'
+          archiveArtifacts artifacts: 'build/ucode*', fingerprint: true
           deleteDir()
         }
       }
@@ -20,9 +21,6 @@ pipeline {
   }
   
   post {
-      always {
-          archiveArtifacts artifacts: 'build/ucode*', fingerprint: true
-      }
       cleanup { 
           cleanWs() 
       }
