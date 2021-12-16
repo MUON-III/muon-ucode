@@ -13,7 +13,7 @@ pipeline {
         sh 'cd muon-casm && mkdir build'
         sh 'cd muon-casm/build && cmake ..'
         sh 'cd muon-casm/build && make'
-        stash includes: 'muon-casm/**/*', name: 'builtCASM'
+        stash includes: 'muon-casm/build/casm', name: 'builtCASM'
       }
     }
     stage('Assemble') {
