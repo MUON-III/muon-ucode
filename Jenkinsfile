@@ -4,24 +4,15 @@ pipeline {
     label '!windows-1' 
   }
   environment {
-    CASM_VERSION = 'v1.1.1' 
+    CASM_URL = 'https://jenkins.i-am.cool/job/muon-casm/job/master/41/artifact/casm-static-624c119-git' 
   }
   stages {
-    stage('Build CASM') {
+    stage('Assemble microcode') {
       steps {
-        sh 'git clone --depth 1 --branch $CASM_VERSION https://github.com/MUON-III/muon-casm.git'
-        sh 'cd muon-casm && mkdir build'
-        sh 'cd muon-casm/build && cmake ..'
-        sh 'cd muon-casm/build && make'
-        stash includes: 'muon-casm/build/casm', name: 'builtCASM'
-      }
-    }
-    stage('Assemble') {
-      steps {
-        unstash 'builtCASM'
+        sh 'curl -L "$CASM_URL" -o casm-static'
         sh 'mkdir build'
-        sh 'cd build && $WORKSPACE/muon-casm/build/casm --input $WORKSPACE/ucode.txt --output ucode.rom --ucode'
-        sh 'cd build && $WORKSPACE/muon-casm/build/casm --input $WORKSPACE/ucode.txt --output ucode.bin --ucode --binary'
+        sh 'cd build && $WORKSPACE/casm-static --input $WORKSPACE/ucode.txt --output ucode.rom --ucode'
+        sh 'cd build && $WORKSPACE/casm-static --input $WORKSPACE/ucode.txt --output ucode.bin --ucode --binary'
       }
     }
   }
