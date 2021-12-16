@@ -9,13 +9,15 @@ pipeline {
         sh 'cd muon-casm && mkdir build'
         sh 'cd muon-casm/build && cmake ..'
         sh 'cd muon-casm/build && make'
+        stash includes: 'muon-casm/**/*', name: 'builtCASM'
       }
     }
     stage('Assemble') {
       steps {
+        unstash 'builtCASM'
         sh 'mkdir build'
-        sh 'cd build && ${env.WORKSPACE}/muon-casm/build/casm --input ${env.WORKSPACE}/ucode.txt --output ucode.rom --ucode'
-        sh 'cd build && ${env.WORKSPACE}/muon-casm/build/casm --input ${env.WORKSPACE}/ucode.txt --output ucode.bin --ucode --binary'
+        sh 'cd build && $WORKSPACE/muon-casm/build/casm --input $WORKSPACE/ucode.txt --output ucode.rom --ucode'
+        sh 'cd build && $WORKSPACE/muon-casm/build/casm --input $WORKSPACE/ucode.txt --output ucode.bin --ucode --binary'
       }
     }
   }
