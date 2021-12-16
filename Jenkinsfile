@@ -4,21 +4,25 @@ pipeline {
   stages {
     stage('Build CASM') {
       steps {
-
+        sh 'git clone https://github.com/MUON-III/muon-casm.git'
+        sh 'cd muon-casm && git checkout v1.0'
+        sh 'cd muon-casm && mkdir build'
+        sh 'cd muon-casm/build && cmake ..'
+        sh 'cd muon-casm/build && make'
       }
     }
     stage('Assemble') {
       steps {
         sh 'mkdir build'
-        sh 'cd build && cmake .. -G "Unix Makefiles"'
-        sh 'cd build && make'
+        sh 'cd build && ${env.WORKSPACE}/muon-casm/build/casm --input ${env.WORKSPACE}/ucode.txt --output ucode.rom --ucode'
+        sh 'cd build && ${env.WORKSPACE}/muon-casm/build/casm --input ${env.WORKSPACE}/ucode.txt --output ucode.bin --ucode --binary'
       }
     }
   }
   
   post {
       always {
-          archiveArtifacts artifacts: 'build/casm.exe', fingerprint: true
+          archiveArtifacts artifacts: 'build/ucode*', fingerprint: true
       }
   }
 }
