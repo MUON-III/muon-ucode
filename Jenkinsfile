@@ -26,5 +26,8 @@ pipeline {
       always {
           archiveArtifacts artifacts: 'build/ucode*', fingerprint: true
       }
+      cleanup { 
+          cleanWs() 
+      }
   }
 }
