@@ -30,7 +30,7 @@ la
 end
 :0x6
 ;;LDB
-lb
+bw
 end
 :0x7
 ;;LDBI
