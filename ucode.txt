@@ -69,12 +69,7 @@ end
 ie
 end
 :0xF
-;; SMM test (set mask to 1010)
-smm 0xA
-end
-:0x10
-;; SMM test (set mask to 0000)
-smm 0x0
+smm
 end
 :0xFF
 nop
