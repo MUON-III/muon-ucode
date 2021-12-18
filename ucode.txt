@@ -69,6 +69,10 @@ end
 ie
 end
 :0xF
+:0x60
+;; SMM test (set mask to 1010)
+smm 0b1010
+end
 :0xFF
 nop
 nop
