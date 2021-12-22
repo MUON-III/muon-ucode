@@ -87,6 +87,10 @@ alul 0xa
 la
 alul 0xf
 end
+:0x12
+; ADD
+alu 9
+end
 :0xFF
 nop
 nop
