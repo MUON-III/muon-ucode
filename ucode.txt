@@ -91,6 +91,12 @@ end
 ; ADD
 alu 9
 end
+:0x12
+; DEC
+alu F
+awi
+alul 3
+end
 :0xFF
 nop
 nop
