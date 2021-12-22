@@ -79,6 +79,14 @@ alul 0xf
 la
 awi
 end
+:0x11
+; OTAPTR
+bwi
+la
+alul 0xa
+la
+alul 0xf
+end
 :0xFF
 nop
 nop
