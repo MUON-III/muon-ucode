@@ -71,6 +71,12 @@ end
 :0xF
 smm
 end
+:0x10
+awi
+la
+alul 0xf
+awi
+end
 :0xFF
 nop
 nop
