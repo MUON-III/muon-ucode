@@ -75,6 +75,7 @@ end
 awi
 la
 alul 0xf
+la
 awi
 end
 :0xFF
