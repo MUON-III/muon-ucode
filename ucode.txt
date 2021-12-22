@@ -72,6 +72,7 @@ end
 smm
 end
 :0x10
+; LDAPTR
 awi
 la
 alul 0xf
