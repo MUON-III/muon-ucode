@@ -51,7 +51,7 @@ end
 :0xB
 ;;BRCH
 pswc
-ld
+la
 bchk
 end
 :0xC
@@ -69,6 +69,7 @@ end
 ie
 end
 :0xF
+;;SMM
 smm
 end
 :0x10
