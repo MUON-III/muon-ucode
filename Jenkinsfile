@@ -23,7 +23,7 @@ pipeline {
   
   post {
       cleanup { 
-          discordSend description: "Microcode build", footer: "Build done", link: "$BUILD_URL", result: currentBuild.currentResult, title: JOB_NAME, webhookURL: DISCORD_URL
+          discordSend description: "Build success", footer: "", link: "$BUILD_URL", result: currentBuild.currentResult, title: JOB_NAME, webhookURL: DISCORD_URL
           cleanWs() 
       }
   }
