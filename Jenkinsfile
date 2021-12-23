@@ -22,9 +22,14 @@ pipeline {
   }
   
   post {
-      cleanup { 
-          discordSend description: "Build success", footer: "", link: "$BUILD_URL", result: currentBuild.currentResult, title: JOB_NAME, webhookURL: DISCORD_URL
-          cleanWs() 
-      }
+    cleanup { 
+        cleanWs() 
+    }
+    success {
+     discordSend description: "Build success", footer: "", link: "$BUILD_URL", result: currentBuild.currentResult, title: JOB_NAME, webhookURL: DISCORD_URL  
+    }
+    failure {
+     discordSend description: "Build failed", footer: "", link: "$BUILD_URL", result: currentBuild.currentResult, title: JOB_NAME, webhookURL: DISCORD_URL
+    }
   }
 }
