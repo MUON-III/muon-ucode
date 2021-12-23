@@ -93,7 +93,7 @@ alu 9
 end
 :0x13
 ; DEC
-alu F
+alu 0xF
 awi
 alul 3
 end
