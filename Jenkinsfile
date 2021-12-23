@@ -22,6 +22,7 @@ pipeline {
   
   post {
       cleanup { 
+          discordSend description: "Microcode build", footer: "Build done", link: "$BUILD_URL", result: currentBuild.currentResult, title: JOB_NAME, webhookURL: credentials("muon-discord-webhook")
           cleanWs() 
       }
   }
