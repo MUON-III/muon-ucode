@@ -105,7 +105,7 @@ alul 0xf
 end
 :0x15
 ; AND
-alul 4
+alul 0xb
 end
 :0xFF
 nop
