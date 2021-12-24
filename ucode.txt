@@ -107,6 +107,18 @@ end
 ; AND
 alul 0xb
 end
+:0x16
+; NOT
+alul 0
+end
+:0x17
+; OR
+alul 0xE
+end
+:0x18
+; XOR
+alul 0x6
+end
 :0xFF
 nop
 nop
