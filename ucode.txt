@@ -119,6 +119,10 @@ end
 ; XOR
 alul 0x6
 end
+:0x19
+; SHLA
+alu 0x3
+end
 :0xFF
 nop
 nop
