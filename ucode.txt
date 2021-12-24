@@ -123,6 +123,16 @@ end
 ; SHLA
 alu 0xC
 end
+:0x20
+; ELDA
+la
+aw
+end
+:0x21
+; ELDB
+la
+bw
+end
 :0xFF
 nop
 nop
