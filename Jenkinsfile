@@ -6,7 +6,7 @@ pipeline {
   environment {
     CASM_URL = 'https://jenkins.i-am.cool/job/muon-casm/job/master/lastSuccessfulBuild/artifact/casm-staticlatest' 
     DISCORD_URL = credentials("muon-discord-webhook")
-    GCP_IAM_KEY = 'gcp-iam-key'
+    GCP_IAM_KEY = 'gcp-main-key'
   }
   stages {
     stage('Assemble microcode') {
