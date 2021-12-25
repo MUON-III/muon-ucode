@@ -133,6 +133,10 @@ end
 la
 bw
 end
+:0x22
+; SHRA
+alul 0x9
+end
 :0xFF
 nop
 nop
