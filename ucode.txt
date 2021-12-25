@@ -148,7 +148,7 @@ alul 0x3
 la
 pswc
 la
-bhck
+bchk
 end
 :0xFF
 nop
