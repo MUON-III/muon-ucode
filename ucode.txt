@@ -135,7 +135,7 @@ bw
 end
 :0x22
 ; SHRA
-alul 0x9
+alul 0x8
 end
 :0xFF
 nop
