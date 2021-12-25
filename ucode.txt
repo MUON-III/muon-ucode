@@ -137,6 +137,10 @@ end
 ; SHRA
 alul 0x8
 end
+:0x23
+; CMP
+alul 0x9
+end
 :0xFF
 nop
 nop
