@@ -144,7 +144,6 @@ end
 :0x24
 ;CMPBH
 alul 0x9
-alul 0x3
 la
 pswc
 la
