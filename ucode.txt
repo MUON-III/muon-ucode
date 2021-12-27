@@ -149,7 +149,7 @@ pswc
 la
 bchk
 end
-:0x26
+:0x25
 ;IRET
 pcw
 end
