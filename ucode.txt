@@ -149,6 +149,10 @@ pswc
 la
 bchk
 end
+:0x26
+;IRET
+pcw
+end
 :0xFF
 nop
 nop
