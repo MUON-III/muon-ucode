@@ -153,6 +153,14 @@ end
 ;IRET
 pcw
 end
+:0x26
+;IJMP
+bwi
+la
+alul 0xa
+la
+jmp
+end
 :0xFF
 nop
 nop
