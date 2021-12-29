@@ -159,7 +159,7 @@ bwi
 la
 alul 0xa
 la
-jmp
+ld
 end
 :0xFF
 nop
