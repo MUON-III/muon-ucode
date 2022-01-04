@@ -161,6 +161,10 @@ alul 0xa
 la
 ld
 end
+:0x27
+la
+awi
+end
 :0xFF
 nop
 nop
