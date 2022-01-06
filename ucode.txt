@@ -162,8 +162,13 @@ la
 ld
 end
 :0x27
+;eawi
 la
 awi
+end
+:0x28
+;SUB
+alu 0x9
 end
 :0xFF
 nop
