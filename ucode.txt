@@ -170,6 +170,11 @@ end
 ;SUB
 alu 0x6
 end
+:0x29
+;;EOTB
+la
+alul 0xa
+end
 :0xFF
 nop
 nop
