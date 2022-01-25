@@ -175,6 +175,12 @@ end
 la
 alul 0xa
 end
+;SMMJMP
+:0x2a
+smm
+la 
+ld
+end
 :0xFF
 nop
 nop
